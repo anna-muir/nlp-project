@@ -10,7 +10,7 @@ function handleSubmit(event) {
     // Waits to update UI with fetched data until data is sent
    setTimeout(function() {
     updateUI(formText);
-   }, 8000);
+   }, 5000);
    console.log('update ui')
  
 }
