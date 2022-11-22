@@ -5,7 +5,7 @@ dotenv.config();
 
 const apiKey = process.env.API_KEY;
 const lang = "&lang=auto"
-const baseURL = "https://api.meaningcloud.com/sentiment-2.1?";
+const baseURL = "https://api.meaningcloud.com/sentiment-2.1?key=";
 
 var path = require('path')
 const express = require('express')
@@ -51,7 +51,7 @@ app.post('/data', function(req,res) {
     //Parameters are url (baseURL), key (apiKey), txt(url that user inputs/formText), and lang(language (auto))
     //URL is built to fetch data
     const getAPI = async(url,key,txt,lang)=> {
-        const res = await fetch(url+key+txt+lang)
+        const res = await fetch(url+key+"&url="+txt+lang)
         try {
             
             const apiData = await res.json();
