@@ -3,8 +3,9 @@ function handleSubmit(event) {
      // Grabs value/input of what user enters
     let formText = document.getElementById('name').value 
    
-    Client.checkForName(formText)
-
+    //Checks if input is blank. Runs api call if input is not blank.
+    if(Client.checkForName(formText)) {
+        console.log('submitted')
     Client.textInput('http://localhost:8081/data', {formText})
    
     // Waits to update UI with fetched data until data is sent
@@ -12,7 +13,10 @@ function handleSubmit(event) {
     updateUI(formText);
    }, 5000);
    console.log('update ui')
- 
+}
+else {
+    alert('Error: Input is blank')
+}
 }
 
 // Sends textInput to server side

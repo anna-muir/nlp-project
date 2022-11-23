@@ -1,8 +1,15 @@
 function checkForName(formText) {
     
     if(formText === "") {
-        alert('Not valid input')
+        //alert('Not valid input')
+        return false
     }
+
+    else {
+        return true
+    }
+
+   
 }
 
 function validURL(url) {
